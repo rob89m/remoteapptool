@@ -89,7 +89,7 @@ End Class
 Module IconModule
 
     Public Sub TestIconLib()
-        Dim testIcon As New IconLib.MultiIcon
+        Dim testIcon As New System.Drawing.IconLib.MultiIcon
     End Sub
 
     Public Function IconFromFilePath(filePath As String) As Icon
@@ -105,7 +105,7 @@ Module IconModule
         Dim success = False
         Dim IconLoadError As Boolean = False
         If My.Computer.FileSystem.FileExists(IconSourcePath) = True Then
-            Dim mIcon As New IconLib.MultiIcon
+            Dim mIcon As New System.Drawing.IconLib.MultiIcon
             Try
                 mIcon.Load(IconSourcePath)
             Catch Ex As Exception
@@ -113,7 +113,7 @@ Module IconModule
             End Try
 
             If Not IconLoadError Then
-                Dim sIcon As IconLib.SingleIcon
+                Dim sIcon As System.Drawing.IconLib.SingleIcon
                 If IconSourceIndex = 0 Then
                     sIcon = mIcon.FirstOrDefault
                 Else

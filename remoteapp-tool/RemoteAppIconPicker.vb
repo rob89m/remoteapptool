@@ -72,7 +72,7 @@
         Me.IconIndexTextBox.Visible = True
 
         If My.Computer.FileSystem.FileExists(Me.IconPathTextBox.Text) Then
-            Dim mIcon As New IconLib.MultiIcon
+            Dim mIcon As New System.Drawing.IconLib.MultiIcon
             Dim IconIndex As Integer = 0
 
             Try
@@ -92,7 +92,7 @@
                 For Each sIcon In mIcon
                     Dim IconKey = IconIndex
                     Dim IconItem As New ListViewItem(IconKey)
-                    Dim fiImage As IconLib.IconImage = sIcon.Item(0)
+                    Dim fiImage As System.Drawing.IconLib.IconImage = sIcon.Item(0)
                     For Each iImage In sIcon
                         If iImage.Icon.Width = 32 Then
                             Select Case iImage.ColorsInPalette
